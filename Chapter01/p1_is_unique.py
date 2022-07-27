@@ -1,4 +1,6 @@
-''' is_unique.py '''
+''' p1_is_unique.py
+
+Implement an algorithm to determine if a string has all unique characters '''
 import string
 
 def is_unique(a_string: string) -> bool:

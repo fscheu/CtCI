@@ -1,5 +1,5 @@
 ''' is_unique.py '''
-from is_unique import is_unique
+from p1_is_unique import is_unique
 
 
 def test_unique_string():
@@ -8,4 +8,3 @@ def test_unique_string():
 
 def test_no_unique():
     assert not is_unique("la chaucha")
-
