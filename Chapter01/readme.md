@@ -17,7 +17,31 @@ However, we generally assume a good implementation that keeps collisions to a mi
 I implemented a mixed approach between this description and the next article from realpython.com:
 [Build a Hash Table in Python with TDD](https://realpython.com/python-hash-table/)
 
-# Resizable Arrays
+## Resizable Arrays
 In Python exists an Array class but List are mostly used to store a series of items and access it by index.
 List are automatically resizable.
 Anyway, as an exercise, I implemented an ArrayList class which has a fixed size and doubles it when need more space.
+
+## StringBuilder
+In a similar way, Python provides several functions similars to StringBuilder like append(), join() and string concatenation
+
+## Interview Questions
+
+### 1.1 Is Unique
+Implement an algorithm to determine if a string has all unique characters. What if you
+cannot use additional data structures?
+Hints: 44, 117, 132
+
+### 1.2 Check Permutation
+Given two strings, write a method to decide if one is a permutation of the other.
+Hints: 1, 84, 122, 131
+
+### 1.3 URLify
+Write a method to replace all spaces in a string with '%20: You may assume that the string
+has sufficient space at the end to hold the additional characters, and that you are given the "true"
+length of the string. (Note: If implementing in Java, please use a character array so that you can
+perform this operation in place.)
+EXAMPLE
+Input: "Mr John Smith   "
+Output: "Mr%20J ohn%20Smith"
+Hints: 53, 118
