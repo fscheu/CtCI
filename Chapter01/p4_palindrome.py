@@ -20,6 +20,18 @@ def is_permutation_palindrome(word) -> bool:
 
     return count_odd <= 1
 
+def is_palindrome_bit_vector(phrase):
+    """checks if a string is a permutation of a palindrome"""
+    r = 0
+    for c in clean(phrase):
+        val = ord(c)
+        mask = 1 << val
+        if r & mask:
+            r &= ~mask
+        else:
+            r |= mask
+    return (r - 1) & r == 0
+
 def clean(word):
     ''' removes any non ascii chars and converts to lower'''
     return [c for c in word.lower() if c in string.ascii_lowercase]

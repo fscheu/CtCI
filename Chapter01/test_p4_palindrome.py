@@ -1,6 +1,6 @@
 ''' test_p4_palindrome.py '''
 
-from p4_palindrome import is_permutation_palindrome
+from p4_palindrome import is_permutation_palindrome, is_palindrome_bit_vector
 
 test_cases = [
     ("aba", True),
@@ -20,9 +20,10 @@ test_cases = [
 ]
 testable_functions = [
     is_permutation_palindrome,
+    is_palindrome_bit_vector,
 ]
 
 def test_pal_perm():
-    for f in testable_functions:
+    for func_palin in testable_functions:
         for [test_string, expected] in test_cases:
-            assert f(test_string) == expected
+            assert func_palin(test_string) == expected
