@@ -18,7 +18,7 @@ def permutation(one_string: string, two_string: string) -> bool:
 
     for _, a_char in enumerate(two_string):
         if a_char in dictionary.keys():
-            if dictionary[a_char] >= 1: 
+            if dictionary[a_char] >= 1:
                 dictionary[a_char] -= 1
             else:
                 dictionary.pop(a_char)

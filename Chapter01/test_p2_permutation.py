@@ -1,6 +1,5 @@
 ''' test_pw_permutation.py '''
 
-import pytest
 from p2_permutation import permutation
 
 def test_permutation():
@@ -11,4 +10,3 @@ def test_no_permutation_empty():
 
 def test_no_permutation():
     assert permutation("aja","jaj") == False
-    
