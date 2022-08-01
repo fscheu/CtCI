@@ -4,12 +4,13 @@
 #
 
 class LinkedList:
-    def __init__(self, val=None, next=None) -> None:
+    def __init__(self, val=None, a_next=None) -> None:
         self.val=val
-        self.next = next
+        self.next = a_next
 
     def add(self, val):
-        self = LinkedList(val,self.next)
+        new_node = LinkedList(val, self)
+        self = new_node
 
 class HashTable:
     def __init__(self,size):
@@ -22,7 +23,7 @@ class HashTable:
     # It uses repr to obtain a string representation of the object
     # It removes the "'" to better distribute the results of ord
     # It uses enumerate and index to improve distribution in similar str
-    # Enumerate starts at 1 so don't multiply by zero the first value    
+    # Enumerate starts at 1 so don't multiply by zero the first value
         return sum(
             index * ord(character)
             for index, character in enumerate(repr(val).lstrip("'"), 1)
@@ -31,7 +32,8 @@ class HashTable:
 
     def add(self, val=None):
 
-        if val is None: return
+        if val is None:
+            return
 
         hash_code = self.hash_func(val)
         position = hash_code % len(self.values)

@@ -1,3 +1,5 @@
+''' test_hash_table.py '''
+
 import pytest
 from hash_table import HashTable
 
