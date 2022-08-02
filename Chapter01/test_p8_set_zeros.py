@@ -1,5 +1,6 @@
 from copy import deepcopy
-from p8_set_zeros import set_zeros
+import time
+from p8_set_zeros import set_zeros_extra_space, set_zeros
 
 test_cases = [
         (
@@ -19,10 +20,17 @@ test_cases = [
             ],
         )
     ]
-testable_functions = [set_zeros]
+testable_functions = [set_zeros,
+                    set_zeros_extra_space,]
 
 def test_zero_matrix():
     for f in testable_functions:
+        start = time.perf_counter()
         for [test_matrix, expected] in test_cases:
             test_matrix = deepcopy(test_matrix)
             assert f(test_matrix) == expected
+        duration = time.perf_counter() - start
+        print(f"{f.__name__} {duration * 1000:.1f}ms")
+
+if __name__ == "__main__":
+    test_zero_matrix()

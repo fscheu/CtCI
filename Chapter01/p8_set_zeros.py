@@ -4,7 +4,7 @@ column are set to 0.
 '''
 from copy import deepcopy
 
-def set_zeros(old_mtx):
+def set_zeros_extra_space(old_mtx):
     n_rows = len(old_mtx)
     n_cols = len(old_mtx[0])
 
@@ -19,3 +19,22 @@ def set_zeros(old_mtx):
                 for row_ix_res in range(n_rows):
                     res_mtx[row_ix_res][col_ix] = 0
     return res_mtx
+
+def set_zeros(old_mtx):
+    n_rows = len(old_mtx)
+    n_cols = len(old_mtx[0])
+    rows = set()
+    cols = set()
+
+    for row_ix in range(n_rows):
+        for col_ix in range(n_cols):
+            if old_mtx[row_ix][col_ix] == 0:
+                rows.add(row_ix)
+                cols.add(col_ix)
+
+    for row_ix in range(n_rows):
+        for col_ix in range(n_cols):
+            if row_ix in rows or col_ix in cols:
+                old_mtx[row_ix][col_ix] = 0
+
+    return old_mtx
