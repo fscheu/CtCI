@@ -37,13 +37,11 @@ def is_insert_case(word1, word2) -> bool:
 def is_replace_case(word1, word2) -> bool:
     ''' Checks if word1 and word2 are one edit away replacing one char'''
     ix_1 = 0
-    ix_2 = 0
     diff = 0
-    while (ix_1 < len(word1)) and (ix_2 < len(word2)):
-        if word1[ix_1] != word2[ix_2]:
+    while ix_1 < len(word1):
+        if word1[ix_1] != word2[ix_1]:
             diff += 1
             if diff > 1:
                 return False
         ix_1 += 1
-        ix_2 += 1
     return True
