@@ -39,7 +39,6 @@ def test_remove_dupes():
 
             deduped.add(5)
             expected.append(5)
-            a = deduped.values()
             assert deduped.values() == expected
 
 
