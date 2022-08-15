@@ -13,7 +13,7 @@ def k_to_last(link_list, k):
         n_follow = n_follow.next
     return n_k.value
 
-test_cases = test_cases = (
+test_cases = (
     # list, k, expected
     ((10, 20, 30, 40, 50), 1, 50),
     ((10, 20, 30, 40, 50), 5, 10),
