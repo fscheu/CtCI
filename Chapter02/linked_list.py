@@ -14,7 +14,7 @@ class LinkedList:
     def __init__(self, val=None):
         self.head = None
         self.tail = None
-        if val:
+        if val is not None:
             self.add_multiple(val)
 
     def add(self, val):
