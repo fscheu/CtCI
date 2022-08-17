@@ -22,7 +22,7 @@ class LinkedList:
         if self.head is None:
             self.head = self.tail = ListNode(val)
         else:
-            self.tail.next = ListNode(val)
+            self.tail.next = ListNode(val, p_node=self.tail)
             self.tail = self.tail.next
         return self.tail
 
