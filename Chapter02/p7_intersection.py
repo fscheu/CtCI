@@ -6,9 +6,10 @@ linked list, then they are intersecting.
 '''
 import time
 import random
+from typing import Optional
 from linked_list import LinkedList, ListNode
 
-def are_intersections_bf(ll_1, ll_2) -> ListNode:
+def are_intersections_bf(ll_1, ll_2) -> Optional[ListNode]:
     seg_1 = ll_1.head
     while seg_1:
         seg_2 = ll_2.head
@@ -30,7 +31,7 @@ def len_and_tail(ll: LinkedList):
         seg = seg.next
     return count, seg
 
-def are_intersections(ll_1, ll_2) -> ListNode:
+def are_intersections(ll_1, ll_2) -> Optional[ListNode]:
 
     len_1, tail_1 = len_and_tail(ll_1)
     len_2, tail_2 = len_and_tail(ll_2)
@@ -58,8 +59,6 @@ def test_intersections():
         l_list2 = LinkedList.generate(random.randint(1,30), 0, 99)
         l_list1.tail.next = l_tail.head
         l_list2.tail.next = l_tail.head
-        #print(l_list1)
-        #print(l_list2)
         assert are_intersections(l_list1, l_list2) == l_tail.head
     duration = time.perf_counter() - start
     print (f"duration: {duration * 1000:.1f}ms")
