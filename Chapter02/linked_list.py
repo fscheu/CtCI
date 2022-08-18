@@ -39,6 +39,14 @@ class LinkedList:
             yield current
             current = current.next
 
+    def __len__(self):
+        res = 0
+        node = self.head
+        while node:
+            res += 1
+            node = node.next
+        return res
+
     def values(self):
         ''' Returns a standard list with all the values of the LinkedList'''
         return [x.value for x in self]
