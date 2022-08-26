@@ -1,7 +1,7 @@
 ''' Linked List structure definition '''
 import random
 
-class ListNode():
+class ListNode:
     def __init__(self, val, n_node=None, p_node=None):
         self.value = val
         self.next = n_node
