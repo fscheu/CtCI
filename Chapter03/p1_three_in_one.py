@@ -60,7 +60,7 @@ def test_fixed_stacks():
         for v in range(size):
             stack.push(i,v)
             assert stack.peek(i) == v
-        
+
         with pytest.raises(StackFullException):
             stack.push(i,v)
 
