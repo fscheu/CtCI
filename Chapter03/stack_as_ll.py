@@ -17,13 +17,17 @@ class Stack:
 
     def pop(self):
         '''Remove and return the value at the top of the Stack'''
-        value = self.head.data
-        self.head = self.head.next
-        return value
+        if self.head:
+            value = self.head.data
+            self.head = self.head.next
+            return value
+        return None
 
     def peek(self):
         '''Returns the value from the top of the Stack'''
-        return self.head.data
+        if self.head:
+            return self.head.data
+        return None
 
     def is_empty(self):
         return bool(self.head)
