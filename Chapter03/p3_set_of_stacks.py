@@ -13,25 +13,25 @@ class SetOfStacks:
     def __init__(self, limit=10) -> None:
         self.capacity = limit
         self.stacks = [Stack()]
-        self.stack_ix = 0
-        self.stacks_sizes = [0]
+        self.size = [0]
 
     def push(self, item):
-        if self.stacks_sizes[self.stack_ix] < self.capacity:
-            self.stacks[self.stack_ix].push(item)
-            self.stacks_sizes[self.stack_ix] +=1
+        cur_stack = self.get_cur_stack()
+        if self.size < self.capacity:
+            cur_stack.push(item)
+            self.size +=1
         else:
-            self.stack_ix +=1
             self.stacks.append(Stack())
-            self.stacks[self.stack_ix].push(item)
-            self.stacks_sizes.append(1)
+            self.stacks[-1].push(item)
+            self.size = 1
 
     def pop(self):
-        item = self.stacks[self.stack_ix].pop()
-        self.stacks_sizes[self.stack_ix] -=1
-        if self.stacks_sizes[self.stack_ix] == 0 and self.stack_ix != 0:
-            del self.stacks_sizes[self.stack_ix]
-            del self.stacks[self.stack_ix]
-            self.stack_ix -= 1
+        cur_stack = self.get_cur_stack()
+        item = cur_stack.pop()
+        self.size -=1
+        if self.size == 0 and len(self.stacks) > 1:
+            del self.stacks[-1]
         return item
 
+    def get_cur_stack(self):
+        return self.stacks[-1]
