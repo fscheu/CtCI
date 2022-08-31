@@ -30,4 +30,5 @@ class Stack:
         return None
 
     def is_empty(self):
-        return bool(self.head)
+        ''' Returns True if the head is None'''
+        return not bool(self.head)
