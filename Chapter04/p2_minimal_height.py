@@ -7,7 +7,7 @@ def create_binary(array, start, end) -> BinaryTreeNode:
     if start > end:
         return None
 
-    mid = int((start + end) / 2)
+    mid = (start + end) // 2
     ret_node = BinaryTreeNode(array[mid])
     ret_node.left = create_binary(array,start,mid-1)
     ret_node.right = create_binary(array,mid+1,end)
