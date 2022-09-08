@@ -2,7 +2,7 @@
 the nodes at each depth (e.g., if you have a tree with depth 0, you'll have 0 linked lists).'''
 
 from graph_and_trees import BinaryTreeNode
-from p2_minimal_height import create_binary
+from p02_minimal_height import create_binary
 
 def list_depths(a_list, node:BinaryTreeNode, level=0):
 
