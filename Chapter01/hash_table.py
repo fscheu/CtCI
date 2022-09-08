@@ -39,12 +39,13 @@ class HashTable:
         position = hash_code % len(self.values)
         if self.values[position] is None:
             self.values[position] = LinkedList(val)
-        else: 
+        else:
             self.values[position].add(val)
 
     def get(self, val=None):
 
-        if val is None: return
+        if val is None:
+            return
 
         hash_code = self.hash_func(val)
         position = hash_code % len(self.values)
@@ -52,7 +53,6 @@ class HashTable:
         while seg:
             if seg.val == val:
                 return seg.val
-            else:
-                seg = seg.next
+            seg = seg.next
         return None
 
