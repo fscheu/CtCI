@@ -61,12 +61,17 @@ def _gen_tree_1():
 
 test_cases = [
     (_gen_tree_1, 7, 12, 2),
+    (_gen_tree_1, 7, 4, None),
 ]
 
 
 def test_first_ancestor():
     for root, n1, n2, result in test_cases:
-        assert result == fst_common_anc(root(), n1, n2).value
+        ancestor = fst_common_anc(root(), n1, n2)
+        if ancestor:
+            assert result == ancestor.value
+        else:
+            assert result == ancestor
 
 
 if __name__ == "__main__":
